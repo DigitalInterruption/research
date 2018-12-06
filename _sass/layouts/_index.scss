@@ -28,6 +28,23 @@
       @extend .body-link;
     }
   }
+
+  .post-teaser.page-teaser {
+    .meta {
+      font-size: 1.4em;
+      text-transform: none;
+    }
+
+    .page-title {
+      font-size: 1.8em;
+      margin-bottom: 0;
+    }
+
+    .button {
+      margin-top: 0.5em
+    }
+  }
+
   .excerpt {
     margin-top: 1em;
   }

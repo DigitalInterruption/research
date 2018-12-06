@@ -44,6 +44,10 @@
       display: inline;
       float: left;
       margin-right: 0.4em;
+
+      .separator {
+        color: rgba($text-color, .5);
+      }
     }
     @media (max-width: 1100px) {
       ul {
