@@ -42,4 +42,25 @@
 	ga('send', 'pageview');
 	</script>
 	{% endif %}
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/cookieconsent.min.css" />
+	<script src="/assets/js/cookieconsent.min.js"></script>
+	<script>
+	window.addEventListener("load", function(){
+	window.cookieconsent.initialise({
+	  "palette": {
+	    "popup": {
+	      "background": "#252525",
+	      "text": "#ffffff"
+	    },
+	    "button": {
+	      "background": "#3fc38a",
+	      "text": "#ffffff"
+	    }
+	  },
+	  "content": {
+	    "dismiss": "I Accept"
+	  }
+	})});
+	</script>
 </head>
