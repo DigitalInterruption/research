@@ -1,7 +1,8 @@
 ---
 layout: page
 title: A Pentesters Guide to Left Shifting Security Testing
-permalink: /automating-security-testing
+permalink: /talks/automating-security-testing
+redirect_from: /automating-security-testing
 hide: true
 category: talk
 date: 2017-09-26
