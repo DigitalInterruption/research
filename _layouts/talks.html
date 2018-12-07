@@ -2,7 +2,8 @@
 layout: default
 ---
 <div class="posts">
-  {% for page in site.pages %}
+  {% assign items = site.pages | sort: 'date' %}
+  {% for page in items reversed %}
   {% if page.category and page.category == 'talk' %}
   <div class="post-teaser page-teaser">
     <header>
