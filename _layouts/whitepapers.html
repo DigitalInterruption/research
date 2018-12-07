@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="posts">
+  {% assign items = site.pages | sort: 'date' %}
+  {% for page in items reversed %}
+  {% if page.category and page.category == 'whitepaper' %}
+  <div class="post-teaser page-teaser">
+    <header>
+        <p class="meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+        <p class="page-title">
+          {{ page.title }}
+        </p>
+    </header>
+    <div>
+      <a class="button" href="{{ page.url | relative_url }}">
+        {{ site.theme_settings.str_talks_continue_reading }}
+      </a>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
