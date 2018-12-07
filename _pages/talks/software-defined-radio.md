@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Software Defined Radio - Attacking Wireless Communication with Low Cost SDR
-permalink: /software-defined-radio
-redirect_from: /talks/software-defined-radio
+permalink: /talks/software-defined-radio
+redirect_from: /software-defined-radio
 hide: true
 category: talk
 date: 2017-08-02

@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Prototyping and Reverse Engineering with Frida (talk)
-permalink: /reverse-engineering-with-frida-talk
-redirect_from: /talks/reverse-engineering-with-frida-talk
+permalink: /talks/reverse-engineering-with-frida-talk
+redirect_from: /reverse-engineering-with-frida-talk
 hide: true
 category: talk
 date: 2018-01-29

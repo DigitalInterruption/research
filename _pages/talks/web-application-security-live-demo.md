@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Web Application Security - Live Hacking Demo
-permalink: /web-application-security-live-demo
-redirect_from: /talks/web-application-security-live-demo
+permalink: /talks/web-application-security-live-demo
+redirect_from: /web-application-security-live-demo
 hide: true
 category: talk
 date: 2017-07-18

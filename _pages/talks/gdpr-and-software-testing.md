@@ -1,8 +1,8 @@
 ---
 layout: page
 title: GDPR & Security - What Does It Mean for Testers
-permalink: /gdpr-and-software-testing
-redirect_from: /talks/gdpr-and-software-testing
+permalink: /talks/gdpr-and-software-testing
+redirect_from: /gdpr-and-software-testing
 hide: true
 category: talk
 date: 2018-03-26
