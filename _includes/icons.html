@@ -1,7 +1,7 @@
 {% if site.theme_settings.rss %}
 <li>
 	<a href="{{ "/feed.xml" | relative_url }}" title="{{ site.theme_settings.str_rss_follow }}">
-		<i class="fa fa-fw fa-rss"></i>
+		<i class="fa fa-fw fa-rss"></i><span class="icon-caption">&nbsp;RSS Feed</span>
 	</a>
 </li>
 {% endif %}
@@ -57,7 +57,7 @@
 {% if site.theme_settings.github %}
 <li>
 	<a href="https://github.com/{{ site.theme_settings.github }}" title="{{ site.theme_settings.str_follow_on }} GitHub">
-		<i class="fa fa-fw fa-github"></i>
+		<i class="fa fa-fw fa-github"></i><span class="icon-caption">&nbsp;GitHub</span>
 	</a>
 </li>
 {% endif %}
@@ -81,7 +81,7 @@
 {% if site.theme_settings.linkedin %}
 <li>
 	<a href="{{ site.theme_settings.linkedin }}" title="{{ site.theme_settings.str_follow_on }} LinkedIn">
-		<i class="fa fa-fw fa-linkedin"></i>
+		<i class="fa fa-fw fa-linkedin"></i><span class="icon-caption">&nbsp;LinkedIn</span>
 	</a>
 </li>
 {% endif %}
@@ -145,7 +145,7 @@
 {% if site.theme_settings.twitter %}
 <li>
 	<a href="https://twitter.com/{{ site.theme_settings.twitter }}" title="{{ site.theme_settings.str_follow_on }} Twitter">
-		<i class="fa fa-fw fa-twitter"></i>
+		<i class="fa fa-fw fa-twitter"></i><span class="icon-caption">&nbsp;Twitter</span>
 	</a>
 </li>
 {% endif %}

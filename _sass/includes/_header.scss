@@ -12,14 +12,45 @@
 
   .avatar {
     max-height: 100px;
-    float: left;
     margin-top: -3px;
     border-radius: 0.2em;
     margin-right: 1em;
+    display: none;
 
-    @media (max-width: 1100px) {
+    @media (min-width: $mobile-bp) {
+      float: left;
+    }
+
+    @media (min-width: 640px) {
       & {
-        /*max-height: 5px;*/
+        display: inline;
+      }
+    }
+  }
+
+  .avatar-sm {
+    display: inline;
+
+    @media (min-width: 640px) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  .hamburger {
+    outline: none;
+    float: right;
+    margin-top: 15px;
+    display: inline;
+
+    @media (min-width: 640px) {
+      margin-top: 5px;
+    }
+
+    @media (min-width: $mobile-bp) {
+      & {
+        display: none;
       }
     }
   }
@@ -45,17 +76,56 @@
       float: left;
       margin-right: 0.4em;
 
+      .icon-caption {
+        display: none;
+      }
+
       .separator {
         color: rgba($text-color, .5);
       }
     }
-    @media (max-width: 1100px) {
+
+    @media (min-width: $mobile-bp) {
+      height: auto !important;
+      margin-top: 15px;
+    }
+
+    @media (max-width: ($mobile-bp - 1)) {
+      & {
+        height: 0;
+        overflow: hidden;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.6s;
+        -ms-transition: height 0.6s;
+        -o-transition: height 0.6s;
+        transition: height 0.6s;
+      }
+
+      &.is-active {
+        height: auto;
+      }
+
       ul {
-        display: inline-block;
-        float: left;
-        /*padding-top: $padding-small;*/
-        text-align: left;
+        float: none;
         width: 100%;
+        display: block;
+      }
+
+      li {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        float: none;
+        border-top: 1px rgba($text-color, .5) solid;
+
+        .icon-caption {
+          display: inline;
+        }
+
+        .separator {
+          display: none;
+        }
       }
     }
   }

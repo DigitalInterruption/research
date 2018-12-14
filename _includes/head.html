@@ -30,6 +30,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js" integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1" crossorigin="anonymous"></script>
 	{% endif %}
 
+	<!-- jQuery -->
+	<script src="{{ "/assets/js/jquery-3.3.1.min.js" | relative_url }}"></script>
+
 	<!-- Google Analytics -->
 	{% if site.theme_settings.google_analytics %}
 	<script>
@@ -43,8 +46,13 @@
 	</script>
 	{% endif %}
 
-	<link rel="stylesheet" type="text/css" href="/assets/css/cookieconsent.min.css" />
-	<script src="/assets/js/cookieconsent.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ "/assets/css/cookieconsent.min.css" | relative_url }}" />
+	<script src="{{ "/assets/js/cookieconsent.min.js" | relative_url }}"></script>
+
+	<link href="{{ "/assets/css/hamburgers.min.css" | relative_url }}" rel="stylesheet">
+
+	<script src="{{ "/assets/js/navigation.js" | relative_url }}"></script>
+
 	<script>
 	window.addEventListener("load", function(){
 	window.cookieconsent.initialise({
