@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: ""
+baseurl: "/research"
 url: "https://research.digitalinterruption.com/"
 include: ['_pages']
 
