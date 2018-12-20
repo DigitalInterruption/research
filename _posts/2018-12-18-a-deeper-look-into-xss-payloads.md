@@ -245,7 +245,7 @@ There are a **lot** of events that can be hooked into using JavaScript, one such
 
 By utilising this event, an attacker can effectively implant a keylogger within the user's browser and exfiltrate key strokes - potentially revealing login credentials.
 
-<video autoplay="true" loop="true" src="/assets/videos/2018-12-18-a-deeper-look-into-xss-payloads/keylogger.m4v"></video>
+<video autoplay="true" loop="true" src="{{ site.baseurl }}/assets/videos/2018-12-18-a-deeper-look-into-xss-payloads/keylogger.m4v"></video>
 
 In the above video, the keypress events are captured and sent to a local web server by including a JavaScript file with the following content:
 
