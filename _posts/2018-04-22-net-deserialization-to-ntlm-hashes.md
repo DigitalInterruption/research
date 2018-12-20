@@ -51,7 +51,7 @@ namespace serialisationTest1
 
 This creates a file, save, which we can view in a text editor.
 
-![](/assets/img/2018-04-22-net-deserialization-to-ntlm-hashes/1.png)
+![]({{ site.baseurl }}/assets/img/2018-04-22-net-deserialization-to-ntlm-hashes/1.png)
 
 This can sometimes be exploited by an attacker when the application deserializes untrusted data. If we look at the deserialized object above, it should be obvious that whilst we cannot directly inject code into the application, we may be able to do something useful (i.e. malicious) if the object we're deserializing does something in it's constructor or in it's dispose method - a method that is called by the Garbage Collector when a .NET object is destroyed. This is because the object does actually get created and destroyed when a deserialization attempt is made, even if the object can't be used because it's the wrong type.
 
@@ -127,6 +127,6 @@ static public void MakeObject()
 
 We then ran Responder, sent the file to the user (via a phishing attack) and waited. Lo and behold, after a little while we had the hashes we could then use for cracking.
 
-![](/assets/img/2018-04-22-net-deserialization-to-ntlm-hashes/2.jpg)
+![]({{ site.baseurl }}/assets/img/2018-04-22-net-deserialization-to-ntlm-hashes/2.jpg)
 
 With a good dictionary, a poor password policy and a bit of time, we were successful in cracking the password.

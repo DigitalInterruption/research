@@ -7,25 +7,25 @@ Earlier in the year, we carried out some research into the use of weak cookie se
 
 Using Shodan, we were able to find 8,190 hosts which appeared to be using the cookie-session middleware for Express.js, using it’s default setting for the session name (i.e. session).
 
-![](/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/1.png)
+![]({{ site.baseurl }}/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/1.png)
 
 In addition to scraping Shodan for cookies, we also scraped data from several websites that allow users to publish code. One source which had a particularly alarming number of publicly disclosed secrets was GitHub – yielding a total of 1,979,689 results in JavaScript projects.
 
-![](/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/2.png)
+![]({{ site.baseurl }}/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/2.png)
 
 Using the cookie data harvested from Shodan, and the leaked secrets found using OSINT, an analysis of the collected data was carried out using a utility we created to brute force cookie secrets – [Cookie Monster](https://github.com/DigitalInterruption/cookie-monster).
 
 Cookie Monster is able to take a collection of cookie samples and execute a brute force attack against them in an attempt to reveal the cookie secrets.
 
-![](/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/3.png)
+![]({{ site.baseurl }}/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/3.png)
 
 An alarming trait amongst a number of the hosts that were using weak secrets was the use of Passport.js – a middleware package used for providing authentication strategies; meaning these hosts were highly susceptible to authentication bypasses and privilege escalation.
 
-![](/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/4.png)
+![]({{ site.baseurl }}/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/4.png)
 
 Of the hosts that were identified as being vulnerable, “secret key” was the most widely used secret key, accounting for 72.58% of the revealed secrets; followed by “keyboard cat”. Both these secrets were found to be prevalent in a lot of samples found in documentation and online tutorials.
 
-![](/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/5.png)
+![]({{ site.baseurl }}/assets/img/2018-06-04-are-your-cookies-telling-your-fortune/5.png)
 
 In an attempt to help the affected hosts, we reached out to all hosts that we were able to acquire contact information for. We were able to successfully identify the ownership of 41 hosts, which were in use by 19 separate organisations.
 

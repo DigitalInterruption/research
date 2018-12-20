@@ -21,9 +21,9 @@ When reversing the application, we noticed a function which looked like it would
 
 The results of this can be seen in the following screenshots.
 
-![](/assets/img/2018-01-09-attention-sinvr-users/1.png)
+![]({{ site.baseurl }}/assets/img/2018-01-09-attention-sinvr-users/1.png)
 
-![](/assets/img/2018-01-09-attention-sinvr-users/2.png)
+![]({{ site.baseurl }}/assets/img/2018-01-09-attention-sinvr-users/2.png)
 
 As there is no authentication on the endpoint, it would be possible for an attacker to download a full list of users of SinVR. During testing, Digital Interruption only downloaded enough users to prove this was an issue by finding our own account.
 

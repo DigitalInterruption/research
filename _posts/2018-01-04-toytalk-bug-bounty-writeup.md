@@ -15,9 +15,9 @@ ToyTalk create "smart" children's toys which (unsurprisingly) connect to the Int
 ## The App
 Upon startup, the application asked for an adult's email address. This allows an adult to provide consent for their child to use the voice recognition features of the app. When an email address is provided and consent is supplied by the parent, the application starts.
 
-![](/assets/img/toytalk-bug-bounty-writeup/1.jpg)
+![]({{ site.baseurl }}/assets/img/toytalk-bug-bounty-writeup/1.jpg)
 
-![](/assets/img/toytalk-bug-bounty-writeup/2.png)
+![]({{ site.baseurl }}/assets/img/toytalk-bug-bounty-writeup/2.png)
 
 Initially, it looked like the attack surface was fairly minimal for this app as the only features available were the app asking for consent and then allowing a child (or security researcher) to speak to Thomas and his friends.
 
@@ -96,7 +96,7 @@ sys.stdin.read()
 
 The correct certificate files could then be extracted from the apk and used to help perform a man in the middle attack. It's interesting to note the toytalk.12 file doesn't use a password.
 
-![](/assets/img/toytalk-bug-bounty-writeup/3.png)
+![]({{ site.baseurl }}/assets/img/toytalk-bug-bounty-writeup/3.png)
 
 Now we're able to use the client certificate, but we still need to bypass certificate pinning. There are several ways I can see to do this, however the easiest was to just remove the certificate from the apk, rebuild and reinstall.
 
@@ -105,7 +105,7 @@ With the client certificate in burpsuite and certificate pinning disabled, we ca
 ### Vuln 1 - Lack of Authentication
 One feature available to the application which isn't immediately obvious at first is that the audio files captured by the app are saved online for later playback by parents. This is tied to the email address used for consent although unavailable until a password reset is performed by the parent.
 
-![](/assets/img/toytalk-bug-bounty-writeup/4.png)
+![]({{ site.baseurl }}/assets/img/toytalk-bug-bounty-writeup/4.png)
 
 When the "speak" button is held down, the application sends the audio file in a post request to the web server as below:
 
@@ -117,7 +117,7 @@ In this case though, the account ID is a random GUID. We need a way to discover 
 
 A clue to this was actually found by running the "strings" command on the ToyTalk library.
 
-![](/assets/img/toytalk-bug-bounty-writeup/5.png)
+![]({{ site.baseurl }}/assets/img/toytalk-bug-bounty-writeup/5.png)
 
 Once the client certificate is installed in the browser, it was possible to navigate to `https://api.toytalk.com/v3/account/<email address>` where a file containing the account ID was downloaded. With an account ID in hand, it was possible to change the account ID in the POST request and send audio to anyone's account given only an email address they registered with the application.
 
@@ -159,7 +159,7 @@ Connection: close
 
 This is just a simple PoC that injects an HTML link using the `<a>` tag into an email but it is thought with some time it would be possible to craft a more enticing email to put users at risk from more advanced social engineering attacks. For example, one parent could trick another into revealing their user name/password as this email appears to come from support@toytalk.com. In the screenshot below, it can be seen we've added links to a malicious website in an email sent from ToyTalk.
 
-![](/assets/img/toytalk-bug-bounty-writeup/6.png)
+![]({{ site.baseurl }}/assets/img/toytalk-bug-bounty-writeup/6.png)
 
 **Timeline**
 - Vuln submitted - Dec 4th 2017

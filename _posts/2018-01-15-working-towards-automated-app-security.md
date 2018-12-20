@@ -130,7 +130,7 @@ As many hacker tools are written by hackers and for hackers, often they are not 
 
 With the current implementation of the newly created Jenkins module, it should be configured with a list of modules that should be run against the Android application.
 
-![](/assets/img/2018-01-15-working-towards-automated-app-security/1.png)
+![]({{ site.baseurl }}/assets/img/2018-01-15-working-towards-automated-app-security/1.png)
 
 Within the application build steps, Jenkins can be used to run the modules specified, with the correct arguments, flagging to the developers at build time whether the vulnerability is present or not and (continually) breaking the build for serious vulnerability.
 
@@ -153,4 +153,4 @@ Although pen testing may always be a requirement, it is risky to consider securi
 
 Originally published in PenTest Magazine
 
-[![](/assets/img/2018-01-15-working-towards-automated-app-security/pentest-magazine.jpg)](https://pentestmag.com/)
+[![]({{ site.baseurl }}/assets/img/2018-01-15-working-towards-automated-app-security/pentest-magazine.jpg)](https://pentestmag.com/)

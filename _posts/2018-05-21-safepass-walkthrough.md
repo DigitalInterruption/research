@@ -10,11 +10,11 @@ The application can be found on our [Github](https://github.com/DigitalInterrupt
 ## Setting Up / Prerequisites
 After installing the APK, a new application named "Safe Pass" will be installed. Launching this app will firstly prompt the user to allow access to the external storage. The reason for this, is so that it can write to a globally available database; to demonstrate the purposes of working outside the application's sandbox.
 
-![](/assets/img/2018-05-21-safepass-walkthrough/1.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/1.png)
 
 Should a user deny the request, the application will exit, indicating that it needs the permission to run:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/2.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/2.png)
 
 The entire challenge can be finished using:
 
@@ -26,7 +26,7 @@ The entire challenge can be finished using:
 ## Step 1 - Initial Analysis
 After getting the application set up, the first challenge that is presented is the login screen. A message is displayed welcoming back the user, and prompts solely for a password. At this point, one can either attempt to brute force the password (and have a small success rate), or start to delve into some OSINT, to see what can be gathered on the username **handsomerob0379**.
 
-![](/assets/img/2018-05-21-safepass-walkthrough/3.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/3.png)
 
 [OSINT Framework](http://osintframework.com/) will provide a significant amount of tools for carrying out reconnaissance on usernames. Running the username through one of these tools, [namechk](https://namechk.com/), will show that the username has been reused, with a few false-positives, and provide links to the profiles it finds. One of the profiles found, will be a Twitter account ([https://twitter.com/handsomerob0379](https://twitter.com/handsomerob0379)), which seems to be owned by the same user, due to the same / scary profile picture.
 
@@ -35,36 +35,36 @@ With the user's Twitter profile now identified, some educated guesses can start 
 
 An initial look at the user's Twitter profile reveals a [slightly strange] passion for kiwi fruit; which means it's viable that the password will contain some kind of reference to it. Attempting to login with just the words "kiwi" or "kiwifruit" will not yield anything:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/4.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/4.png)
 
 Most likely, a password will need to meet a minimum strength; this is usually done by forcing numbers or symbols to be present in the password. As most people have a numeric sequence that will be memorable to them (birth date, a pin code for building entry, phone number etc.), they tend to lean towards reusing these sequences in passwords. Circling back to the user's username, presents a number that may be usable.
 
 Trying to login with the password **kiwi0379** will work and then present the 2FA screen:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/5.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/5.png)
 
 ## Step 3 - Source Code Analysis of Login Procedure
 Upon arriving at the 2FA screen, it will become evident that logging in to the application is not going to be possible. The next step is to start looking into the source code that the application is built upon.
 
 A number of tools exist to aid in this, but for the purpose of this document, jadx will be used. When launching jadx, it will instantly display a prompt to open a file, whilst here, choose the Safe Pass APK file. Shortly after opening the file, the program will load with the source code tree visible:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/6.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/6.png)
 
 Expanding the `com.digitalinterruption.*` tree will reveal a number of classes; including a `LoginActivity` class. Inspecting this will reveal the code that is executed upon clicking the login button:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/7.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/7.png)
 
 On line 5, it checks if the `mHasValidPassword` variable is set to true, if it is, it hits the 2FA blockade; otherwise, it will run the `login` method:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/8.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/8.png)
 
 This method passes the contents of the password input to the `checkPassword` method, and if the return value is true, sets the `mHasValidPassword` variable that was previously seen in the click handler.
 
-![](/assets/img/2018-05-21-safepass-walkthrough/9.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/9.png)
 
 The `checkPassword` method now begins to reveal a bit more about the inner workings of the application. Assuming the user does not enter a blank password, it will use the password to construct a "CryptoHandler" object, which then decrypts the value returned by a method named `getAuthenticationToken`, and checks the result against a hard coded string; if the value is the same, the user is now considered logged in.
 
-![](/assets/img/2018-05-21-safepass-walkthrough/10.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/10.png)
 
 The `getAuthenticationToken` method reveals two important pieces of information required to further reverse the application:
 
@@ -76,33 +76,33 @@ As an SQLite database is in use, and the application previously prompted to util
 
 Examining the `setupDatabase` method of `LoginActivity` shows that the `mDatabase`  variable is initialised using an instance of the `DBHelper` class:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/11.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/11.png)
 
 Returning back to the source code tree, and expanding the `data` package will reveal the `DBHelper` class and allow for further analysis:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/12.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/12.png)
 
 The method of the `DBHelper` class that was being used to acquire a connection was the `getDatabase` method; this method consists of only a single line, which opens the database from the path stored in the `mDatabasePath` variable:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/13.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/13.png)
 
 Continuing to analyse the `DBHelper` class will show that there is only a single point of initialisation for the `mDatabasePath` variable; which is found within the `ensureDatabaseIsCopied` method.
 
-![](/assets/img/2018-05-21-safepass-walkthrough/14.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/14.png)
 
 By taking a look at the implementation of this method, it is possible to determine where the database is stored. On line 5, the `Environment.getExternalStoragePublicDirectory` method is called with the `DIRECTORY_DOCUMENTS` enum. This method will return the "Documents" directory within the path to the storage area that is world writeable on the device; typically found at `/mnt/sdcard`.
 
 Verification of this discovery can be executed by getting a shell on to the device, using adb, and then listing the contents of the `/mnt/sdcard/` directory. Alternatively, if using a physical device - connecting it via USB and browsing the storage should reveal the same information.
 
-![](/assets/img/2018-05-21-safepass-walkthrough/15.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/15.png)
 
 If mounting the device's storage is not possible, but adb is usable (for example, if using an emulator), the database can be pulled back using the `adb pull` command as can be seen below:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/16.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/16.png)
 
 Once the database has been acquired, the [encrypted] data stored within it can be openly viewed using any application capable of opening SQLite databases:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/17.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/17.png)
 
 ## Step 5 - Decrypting The Data
 The final step of the challenge is to decrypt the data found within the recovered SQLite database. The information gathered throughout the challenge up to this point has led to the knowledge that the data seems to be being encrypted using the AES algorithm.
@@ -111,7 +111,7 @@ There are a number of ways that AES data can be encrypted / decrypted, a particu
 
 Previously, the CryptoHandler class could be found being instantiated using the password that the user supplied when they logged in, which is passed to the `secretKey` variable of the constructor method found below:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/18.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/18.png)
 
 Within this method, the `mKey` variable is set on line 3, and the `mIV` variable is set on line 4 - both of which seem to be the key and IV that are used during the AES operations.
 
@@ -125,11 +125,11 @@ In this recipe, the key and IV values of the AES Decrypt operation are set to th
 
 Unfortunately, this will yield an error, indicating the data still cannot be decrypted:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/19.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/19.png)
 
 One final look at the `CryptoHandler` class, in particular the `encrypt` method, will reveal that after the data is being encrypted, it is being Base64 encoded:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/20.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/20.png)
 
 In order to deal with this, the Base64 Decode operation can be added prior to the AES Decrypt operation, which will chain the result of the first operation to the second as its input:
 
@@ -137,6 +137,6 @@ In order to deal with this, the Base64 Decode operation can be added prior to th
 
 Now, when running the recipe on CyberChef, the decrypted password can be seen in the output pane:
 
-![](/assets/img/2018-05-21-safepass-walkthrough/21.png)
+![]({{ site.baseurl }}/assets/img/2018-05-21-safepass-walkthrough/21.png)
 
 This CyberChef recipe can then be used to decrypt all remaining data found within the application's database.

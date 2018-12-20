@@ -9,7 +9,7 @@ This vulnerability would allow users to unlock all (paid) content in the applica
 
 During the initial review of this application, we noticed a lot of content was set to “forbidden” within the application with only one sample available for free.
 
-![](/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/1.png)
+![]({{ site.baseurl }}/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/1.png)
 
 Any experienced penetration tester or hacker would ask themselves “how does the app know what is available to the user and what isn’t?”. To try and answer this question, we started a proxy server to capture the network traffic. Looking though the results we were unable to see anything that set content to available/forbidden which lead us to believe the check was performed locally within the application itself. We wanted to find out whether this was true and to see whether we could set the state to “purchased”.
 
@@ -17,9 +17,9 @@ Although the main application is a x64 program, there were a number of .net asse
 
 Whilst decompiling the application, we noticed a section of code that dealt with coupons. We quickly located this feature in the application.
 
-![](/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/2.png)
+![]({{ site.baseurl }}/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/2.png)
 
-![](/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/3.png)
+![]({{ site.baseurl }}/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/3.png)
 
 Looking though the code, it looked like there were three types of valid responses from the server when a coupon is submitted. These are `invalidCode`, `expiredCode` and `unlimited`. When a response from a valid coupon comes back from the web server, the SinVR app unlocks the content specified in the response, allowing it to be selected from the menu. Because of this, it’s likely coupons are created for specific scenes. There is a coupon type where the behaviour is different though and that is the “unlimited” coupon code. If an unlimited coupon is used, all scenes in the application are set to be unlocked.
 
@@ -77,7 +77,7 @@ As can be seen, the server responds to all requests with:
 
 This caused the application to respond as follows
 
-![](/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/4.png)
+![]({{ site.baseurl }}/assets/img/2018-02-22-hacking-sinvr-for-fun-and-profit-and-free-adult-content/4.png)
 
 As suspected, all assets are set to “Enter”. In a lot of cases, there would be additional checks on the server to make sure a user is allowed to view the content they requested however in SinVR, this authentication check is not performed. This allows anyone to download content assuming the application says it’s allowed.
 
