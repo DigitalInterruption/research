@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/research"
-url: "https://research.digitalinterruption.com/"
+baseurl: ""
+url: "https://research1.digitalinterruption.com/"
 include: ['_pages']
 
 # THEME-SPECIFIC CONFIGURATION
