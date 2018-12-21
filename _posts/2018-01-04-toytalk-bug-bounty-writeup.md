@@ -2,6 +2,7 @@
 layout: post
 title: '"F**k you Thomas" - ToyTalk bug bounty writeup'
 tags: [hacking, mobile, bug bounty]
+redirect_from: /single-post/2018/01/04/ToyTalkBugBountyWriteup
 ---
 Jahmel Harris at Digital Interruption submitted two bugs to ToyTalk and was awarded $1750. As the issues have been resolved, he wanted to write about the vulnerabilities so other developers will take this type of attack into account when writing mobile applications.
 
