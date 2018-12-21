@@ -2,6 +2,7 @@
 layout: post
 title: .NET Deserialization to NTLM Hashes
 tags: [.net, deserialization, vulnerability, ntlm, pentest]
+redirect_from: /single-post/2018/04/22/NET-Deserialization-to-NTLM-hashes
 ---
 During a recent penetration test, we came across a interesting technique we used to get admin credentials (well, NTLM hashes which were then cracked). There is nothing particularly new or novel about this attack, and it requires specific requirements to be useful, but we thought it was interesting enough to share. A blog post on a very similar technique was posted recently by Gianluca Baldi on the [mediaservice.net blog](https://techblog.mediaservice.net/2018/02/from-xml-external-entity-to-ntlm-domain-hashes/) and we found we were able to do something very similar but with a .net deserialization vulnerability rather than XXE.
 

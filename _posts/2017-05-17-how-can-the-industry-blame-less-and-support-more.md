@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How Can The Industry Blame Less and Support More?
+redirect_from: /single-post/2017/05/17/How-can-the-industry-blame-less-and-support-more
 ---
 It seems that whenever we see an article about the NHS we see the words "crippled" and "in chaos" but last week we added "targeted" to the list due to the widely reported malware attack WannaCry.  Failures in the NHS are always big news and WannaCry is no exception, however with responsibility for the breach, and how such a breach should be handled sitting so firmly in the headlines, it has been suggested that the response of the security industry has been to use the incident as an opportunity to sell services and products.  
 

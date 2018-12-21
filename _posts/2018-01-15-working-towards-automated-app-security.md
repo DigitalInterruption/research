@@ -2,6 +2,7 @@
 layout: post
 title: Working Towards Automated App Security
 tags: [android, development, DevSecOps, security]
+redirect_from: /single-post/2018/01/15/Working-towards-automated-App-Security
 ---
 There has been a growing shift in the way software is developed and one the security industry has unfortunately been slow to adapt to and adopt. I'm talking, of course, about agile. Agile exists in order to help developers write and release software early and often. This has the benefit of allowing companies to quickly react to changes in the market, however when a security review is a requirement of going live, how can a development team be truly agile? Is it possible to be both secure and have the flexibility to go live when needed?
 

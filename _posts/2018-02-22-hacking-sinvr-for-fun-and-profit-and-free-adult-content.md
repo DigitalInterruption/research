@@ -2,6 +2,7 @@
 layout: post
 title: Hacking SinVR for Fun and Profit and Free Adult Content
 tags: [sinvr, vulnerability, virtual reality]
+redirect_from: /single-post/2018/02/22/Hacking-SinVR-for-fun-and-profit-and-free-adult-content
 ---
 In December, we raised an issue with inVR (the company behind the adult VR application - SinVR) where a vulnerability allowed us to view some details of customers that were using the application. During our research, we noticed another interesting vulnerability but as customer details were not at risk, we decided to wait before publishing this post. Initially, inVR said they were not interested in fixing this vulnerability however, after reading an initial draft of this post they asked for two weeks to fix the issue.
 

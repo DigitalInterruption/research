@@ -2,6 +2,7 @@
 layout: post
 title: Safe Pass Walkthrough
 tags: [ctf, safepass, writeup, m1con, android]
+redirect_from: /single-post/2018/05/21/Safepass-Walkthrough
 ---
 As part of the first ever [M1Con](https://www.meetup.com/meetup-group-MsiOIcyg/), Digital Interruption's [@jayHarris_Sec](https://twitter.com/JayHarris_Sec) gave a talk about mobile security and to fit the Mobile Security theme, we decided to put together an Android based CTF. To encourage everyone to participate, it was created with some technical and non technical elements.  Shout out to [@iamrastating](https://twitter.com/iamrastating/) for writing the code and [@phyushin](https://twitter.com/phyushin) for being the first to complete it.
 

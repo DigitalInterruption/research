@@ -2,6 +2,7 @@
 layout: post
 title: Improving WordPress Security
 tags: [WordPress, security, web application]
+redirect_from: /single-post/2017/07/24/Improving-WordPress-Security
 ---
 WordPress is one of the most popular Content Management Systems and is a favourite choice for SMEs. It allows websites to be built that look good, perform well and are cheap to develop. Because of its success, it also a popular target for malicious attackers. A question we hear a lot at Digital Interruption is "Why did I get attacked? My site isn't interesting". What we often see is that an attacker rarely will choose a target based on the content of the site. Often the Internet is scanned for easy to hack WordPress installations. If you are part of that list, expect to be hit.
 

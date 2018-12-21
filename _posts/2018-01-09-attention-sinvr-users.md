@@ -2,6 +2,7 @@
 layout: post
 title: Lack of Authentication Leaks Customer Details in SinVR - An Adult VR Application
 tags: [hacking, vr, sinvr, virtual reality, thick client, vulnerability]
+redirect_from: /single-post/2018/01/09/Attention-SinVR-users
 ---
 Despite initial thoughts, pulling robots apart and killing zombies does eventually get boring so I decided to see what else could be done in Virtual Reality. When looking for other interesting VR applications, one kept coming up as recommended on sites such as reddit; SinVR. Honestly, it was a little underwhelming so instead my night was spent pulling it apart. Who knew that decompiling an application would be more interesting than virtual women?
 
