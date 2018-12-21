@@ -2,6 +2,7 @@
 layout: post
 title: The Ethics of Digital Security - Is The Cost Greater Than The Ransom?
 tags: [WannaCry, ransom, ShadowBrokers]
+redirect_from: /single-post/2017/06/01/The-ethics-of-digital-security---is-the-cost-greater-than-the-ransom
 ---
 No one knows who wrote the WannaCry ransomware. What we do know is it was weaponized using a leaked exploit from the National Security Agency (NSA). An exploit is a piece of software that can be used by an attacker to take advantage of a flaw or vulnerability to gain access to computer systems. Attacks such as these cost billions of dollars a year, not just in loss of business due to down time and the cost of fixing the vulnerabilities, but also in ransoms to attackers.  
 
