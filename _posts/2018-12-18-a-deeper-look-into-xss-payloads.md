@@ -2,6 +2,7 @@
 layout: post
 title: A Deeper Look into XSS Payloads
 tags: [hacking, xss, cross-site scripting]
+image: /assets/img/2018-12-18-a-deeper-look-into-xss-payloads/screenshot.png
 ---
 Over time, the type of vulnerabilities seen in the web app landscape changes. One that has persisted year in, year out, is cross-site scripting. It's been a repeating issue for so long that it's almost non-alarming to most people when news of a new XSS issue is announced. This post aims to illustrate how cross-site scripting attacks may be utilised in real world scenarios as well as a number of evasion techniques.
 
