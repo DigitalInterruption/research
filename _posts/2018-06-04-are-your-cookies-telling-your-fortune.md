@@ -3,6 +3,7 @@ layout: post
 title: Are Your Cookies Telling Your Fortune?
 tags: [hacking, cookies, cve]
 redirect_from: /single-post/2018/06/04/Are-Your-Cookies-Telling-Your-Fortune
+image: /assets/img/2018-06-04-are-your-cookies-telling-your-fortune/3.png
 ---
 Earlier in the year, we carried out some research into the use of weak cookie secrets in Express.js powered web applications and how information gathered from OSINT can be used to attack said applications.
 
