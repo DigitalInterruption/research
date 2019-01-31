@@ -15,7 +15,7 @@ theme_settings:
   # Header and footer text
   header_text: 'Digital Interruption is a cyber security consultancy based in Manchester''s Innovation District. We believe that security research is the foundation to good security. We regularly publish blogs and white papers and speak publicly on our findings.<br><a class="button" href="https://www.digitalinterruption.com/">Penetration Testing</a>'
   header_text_feature_image: assets/img/img2-black-1.jpg-converted.jpg
-  footer_text: Copyright 2018 <a target="_blank" href="https://www.digitalinterruption.com/">Digital Interruption</a>
+  footer_text: Copyright 2019 <a target="_blank" href="https://www.digitalinterruption.com/">Digital Interruption</a>
 
   # Icons
   rss: true
