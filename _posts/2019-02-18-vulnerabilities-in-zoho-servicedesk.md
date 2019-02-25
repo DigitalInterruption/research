@@ -13,7 +13,7 @@ Multiple directory traversal vulnerability exists in Zoho ManageEngine Service D
 
 ### Directory Traversal in FileAttachment.jsp
 
-```
+```http
 POST /common/FileAttachment.jsp HTTP/1.1
 Host: example.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
@@ -57,7 +57,7 @@ Attach file
 
 ### Directory Traversal in ResourcesAttachments.jsp
 
-```
+```http
 POST /asset/ResourcesAttachments.jsp HTTP/1.1
 Host: example.com 
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
