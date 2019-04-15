@@ -17,4 +17,4 @@ By looking at real penetration test reports, we will look at the tools and techn
 
 The aim of this talk will be to understand why security has not kept current with modern development practices and give developers the ability to integrate security into the development pipeline.
 
-<a class="button" href="https://www.youtube.com/watch?v=1RSIh5DCt2Y" target="_blank">Watch Talk</a>&nbsp;<a class="button" href="http://file.digitalinterruption.com/Automating%20myself%20out%20of%20a%20job.pdf">Download PDF</a>
+<a class="button" href="https://www.youtube.com/watch?v=etREkdVo-Qk" target="_blank">Watch Talk</a>&nbsp;<a class="button" href="http://file.digitalinterruption.com/Automating%20myself%20out%20of%20a%20job.pdf">Download PDF</a>
