@@ -57,7 +57,7 @@ When developing Android Wear applications, data integrity and confidentially of 
 
 As shown in this post, there are numerous ways in which data can inadvertently be leaked to an attacker or curious user. Although Android provides many protections from external threats, Android developers should consider applying additional protections with highly sensitive data when developing for the Wear platform. By performing checks for hostile environments (such as rooted devices, or devices with hci_snoop log enabled) it is possible to protect against the threat of malware, as well as the curious or malicious user.
 
-[1] <https://labs.f-secure.com/archive/android-wear-security-analysis/>
-[2] <https://lacklustre.net/>
-[3] <http://www.darkreading.com/partner-perspectives/bitdefender/bitdefender-research-exposes-security-risks-of-android-wearable-devices-/a/d-id/1318005>
-[4] <https://github.com/jahmelharris/read_hci_log_android>
+- [1] <https://labs.f-secure.com/archive/android-wear-security-analysis/>
+- [2] <https://lacklustre.net/>
+- [3] <http://www.darkreading.com/partner-perspectives/bitdefender/bitdefender-research-exposes-security-risks-of-android-wearable-devices-/a/d-id/1318005>
+- [4] <https://github.com/jahmelharris/read_hci_log_android>
