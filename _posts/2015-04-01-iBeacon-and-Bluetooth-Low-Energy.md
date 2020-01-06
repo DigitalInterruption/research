@@ -1,10 +1,9 @@
 ---
 layout: post
-title: iBeacon and Bluetooth Low Energy?
+title: iBeacon and Bluetooth Low Energy
 tags: [Bluetooth]
 ---
 
-# Bluetooth Low Energy
 Bluetooth Low Energy (also known as Bluetooth Smart or, incorrectly, Bluetooth 4.0) is a new standard of wireless communication introduced as part of the Bluetooth 4.0 specification. Similar in many ways to Bluetooth Classic, there are some notable differences:
 
 Power consumption is significantly lower, with BLE devices lasting months or years on a single battery.
