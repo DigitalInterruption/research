@@ -26,12 +26,13 @@ Due to these differences, Bluetooth Low Energy is more suited to embedded device
 
 
 # iBeacon
-
 iBeacon is a standard developed by Apple which uses small Bluetooth Low Energy devices to provide location data to mobile applications. Although developed by Apple, the iBeacon standard is supported cross platform and iBeacon applications exist on Android and iOS. iBeacon devices transmit a UUID at set intervals (set depending on requirements – the higher the transmit rate, the shorter the battery life). To take advantage of iBeacons, applications are written to listen for specific UUIDs and actions take place based on the UUID received. For example, a mobile application for a supermarket may show coupons and offers when it detects a specific UUID only present in specific locations. It is important to understand that iBeacons do not push notifications to devices; instead the application will deliver the notification to the user based on the UUID received.
 
 iBeacons take advantage of Bluetooth Low Energy's advertisement mode, where the advertisement data follows a specific format.
 
+```
 <ibeacon prefix> <UUID> <Major #> <Minor #>
+```
 
 Although the UUID is unique per device (or should be...), the major and minor versions are used to identify a group of iBeacons, and identify an iBeacon with a group respectively.
 
@@ -69,26 +70,22 @@ hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 1A 1A FF 4C 00 02 15 DE AD BE EF CA FE 
 ```
 
 To start transmitting:
-
 ```
 hciconfig hci0 leadv 
 ```
 
 To stop transmitting:
-
 ```
 hciconfig hci0 noleadv 
 ```
 
 I will not provide a break down off the hcitool usage here (this can easily be found online), however the iBeacon data is set as follows:
-
 ```
 DE AD BE EF CA FE DE AD BE EF CA FE DE AD BE EF | 00 00 | 00 00 | C5 00
 UUID | major number | minor number | Transmit power
 ```
 
 As well as tranmitting iBeacon data, hcitool can also be used to query scan for Bluetooth Low Energy devices.
-
 ```
 hcitool lescan
 LE Scan ...
@@ -110,7 +107,6 @@ Shortened local name: 'jaalee............'
 ```
 
 Here we'll see gatttool in interactive mode:
-
 ```
 sudo gatttool -b CD:44:30:E9:23:30 -I -t random
 [ ][CD:44:30:E9:23:30][LE]> connect
