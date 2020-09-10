@@ -130,7 +130,7 @@ Finally, what does this mean for the users of Giggle. Unfortunately, your locati
 - **09/09/2020**: ms__chief account blocked
 - **09/09/2020**: Journalist contacted. Ignored by giggle
 - **10/09/2020**: Giggle finally asked for more details 
-- **10/10/2020**: Vulnerability fixed 
+- **10/09/2020**: Vulnerability fixed 
 
 
 
