@@ -7,9 +7,12 @@ tags:
   - Vulnerability 
 image: /assets/img/2020-09-10-giggle-laughable-security/GigglingEmoji.jpg
 ---
-Preface: There is very little in this blog post that is interesting from a technical perspective. The discovered vulnerability is incredibly basic but fairly high risk. Due to the nature of the application, and the fallout from our disclosure attempt, we wanted to write up our findings. The TL;DR is that giggle is exposing user's phone numbers, private images and location to the world.
+Preface: There is very little in this blog post that is interesting from a technical perspective. The discovered vulnerability is incredibly basic but fairly high risk. Due to the nature of the application, and the fallout from our disclosure attempt, we wanted to write up our findings. The TL;DR is that giggle has been exposing user's phone numbers, private images and location to the world.
 
-Normally we wouldn't post a vulnerability like this so soon after discovering it but the owner of the app refuses to listen to us and continuously claims no vulnerability exists. We tried to get in contact with her to let her read this post before publishing it but, again, she showed no interest.
+
+Normally we wouldn't post a vulnerability like this so soon after discovering it but the owner of the app refuses to listen to us and continuously claims no vulnerability exists. We tried to get in contact with her via a third party (after we had been blocked) to let her read this post before publishing it but, again, she showed no interest.
+
+(edit: The issue has now been fixed.)
 
 --- 
 
@@ -25,9 +28,9 @@ There were a few red flags, such as an excessive use of pink and word “females
 
 At this point the red flags became a little more crimson. Firstly, I was asked to submit my phone number so that a verification code could be sent to my mobile. Then I was asked to allow the app to access my camera so that a selfie of me could be submitted to verify I was female. This verification, apparently, is done using AI. From previous work done on this, we know this can often be notorious for mischaracterising and therefore excluding certain racial groups, some trans women and some masculine looking women. 
 
-The app assured me that my verification picture would not be stored so not to worry about what I looked like, so my gargoylesq visage was submitted (I’ll get to the later) and I was duly approved to enter the most confusing online experience of my life. 
+The app assured me that my verification picture would not be stored so not to worry about what I looked like, so my gargoylesq visage was submitted (I’ll get to the later) and I was duly approved to enter the app. 
 
-I went to set up my profile to see what information was publicly available about me, even if only in the app, to find there wasn't one and I had to set up multiple profiles or ‘giggles’ to start a tinder like experience on each specific subject I was interested in (I chose menopause, body image, hiking and wine tasting).  I went to find these profiles, but the UX was so confusing it looked like they had disappeared. 
+I went to set up my profile to see what information was publicly available about me, even if only in the app, to find there wasn't one and I had to set up multiple profiles or ‘giggles’ to start a tinder like experience on each specific subject I was interested in (I chose menopause, body image, hiking and wine tasting), that range from socialising and hobbies to more high risk areas such as abuse and sex work. 
 
 As I was curious how secure my data was, and as we are currently working on improvements to [REX](https://rex.digitalinterruption.com/) (and thought they’d maybe like a [free license](https://www.digitalinterruption.com/100-free-rex-licences)), we decided to dig a little deeper. 
 
@@ -74,6 +77,10 @@ What about the supposed private picture that is used to verify accounts? They cl
 If we look at the URL of the verification image (which we recovered by viewing network traffic in BurpSuite), we can see that the only thing that is required in the user GUID. As we can view the user GUID for every account (e.g. our test account) we can easily download the associated verification selfie. Although this is not terrible on it’s own, giggle do promise that this isn’t shared or published, and, given that it is available data stored along side my mobile number and geographical coordinates, with this information an attacker would know my address, my personal mobile number and what I look like. 
 
 ![]({{ site.baseurl }}/assets/img/2020-09-10-giggle-laughable-security/image8.jpeg.resize.jpeg)
+
+This is where we get to the really scary bit. Giggle has sections encouraging women to find support on abortion, abuse, addiction and relationships among other categories. The amount of available data means that with a phone number or name, an abusive partner would potentially be able to find the location of an abused woman and confirm her identity with the verification picture. There is also a section for sex workers, who, understandably would expect any app enabling them to advertise their work to have adequate privacy and security controls. Even if a user deletes their account, that data appears to still be saved by giggle. 
+
+![]({{ site.baseurl }}/assets/img/2020-09-10-giggle-laughable-security/image13.jpeg)
 
 ### Account Deletion
 
@@ -122,7 +129,8 @@ Finally, what does this mean for the users of Giggle. Unfortunately, your locati
 - **09/09/2020**: Saskia asked Sall to reconsider ignoring us
 - **09/09/2020**: ms__chief account blocked
 - **09/09/2020**: Journalist contacted. Ignored by giggle
-- **10/10/2020**: Public disclosure
+- **10/09/2020**: Giggle finally asked for more details 
+- **10/10/2020**: Vulnerability fixed 
 
 
 
