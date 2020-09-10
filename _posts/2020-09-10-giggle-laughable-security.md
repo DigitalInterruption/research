@@ -15,6 +15,8 @@ Normally we wouldn't post a vulnerability like this so soon after discovering it
 
 (edit2: Sall is threating us with legal action.)
 
+(edit3: We've had some criticism of the first public tweet. We standby our words. Not knowing how this would play out, we wanted to make it clear that we didn't support the app or the founder. Companies can be unpredictable when reporting vulnerabilities and we wanted to avoid a situation where they would be publicly praising us or even mentioning us on their website etc.)
+
 --- 
 
 ### What is Giggle?
