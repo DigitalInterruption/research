@@ -74,7 +74,7 @@ What about the supposed private picture that is used to verify accounts? They cl
  
 ![]({{ site.baseurl }}/assets/img/2020-09-10-giggle-laughable-security/image7.png.resize.png)
 
-If we look at the URL of the verification image (which we recovered by viewing network traffic in BurpSuite), we can see that the only thing that is required in the user GUID. As we can view the user GUID for every account (e.g. our test account) we can easily download the associated verification selfie. Although this is not terrible on it’s own, giggle do promise that this isn’t shared or published, and, given that it is available data stored along side my mobile number and geographical coordinates, with this information an attacker would know my address, my personal mobile number and what I look like. 
+If we look at the URL of the verification image (which we recovered by viewing network traffic in BurpSuite), we can see that the only thing that is required is the user GUID. As we can view the user GUID for every account (e.g. our test account) we can easily download the associated verification selfie. Although this is not terrible on it’s own, giggle do promise that this isn’t shared or published, and, given that it is available data stored along side my mobile number and geographical coordinates, with this information an attacker would know my address, my personal mobile number and what I look like. 
 
 ![]({{ site.baseurl }}/assets/img/2020-09-10-giggle-laughable-security/image8.jpeg.resize.jpeg)
 
