@@ -110,7 +110,7 @@ Our public tweet had no engagement at all until Sall, the giggle founder, decide
 
 Our founders have reached out to giggle and Sall and have been blocked following every attempt at contact. Our three year incorporated company has been accused of being a creepy bloke who runs private WhatsApp groups full of naked women, a front for the alt-left, making up the vuln to discredit Sall and her company and hypocrites for wanting to protect the data of users despite the apps founder having view that counter our own.
 
-Our company and I (a woman) have been accuse of being a man, and therefore a misogynist multiple times. We have been told that as men (60% of Digital Interruption are women), we should not have a say on the safety of women and their personal data. 
+Our company and I (a woman) have been accused of being a man, and therefore a misogynist multiple times. We have been told that as men (60% of Digital Interruption are women), we should not have a say on the safety of women and their personal data. 
 
 Sadly, denial is not uncommon when trying to disclose. We are used to being ignored and even getting some pushback, but ultimately we feel it is our responsibility to persist and ensure the personal data of users is protected. 
 
