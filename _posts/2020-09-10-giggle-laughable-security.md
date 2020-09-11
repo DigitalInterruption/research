@@ -11,7 +11,7 @@ Preface: There is very little in this blog post that is interesting from a techn
 
 Normally we wouldn't post a vulnerability like this so soon after discovering it but the owner of the app refuses to listen to us and continuously claims no vulnerability exists. We tried to get in contact with her via a third party (after we had been blocked) to let her read this post before publishing it but, again, she showed no interest.
 
-(edit: We wrote but didn't publish this article before the vulnerability was fixed. It's has now been fixed so feel comfortable releasing these details.)
+(edit: We wrote but didn't publish this article before the vulnerability was fixed. Giggle has told us it has now been fixed so we feel comfortable releasing these details.)
 
 (edit2: Sall is threating us with legal action.)
 
