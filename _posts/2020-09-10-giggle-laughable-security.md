@@ -17,6 +17,8 @@ Normally we wouldn't post a vulnerability like this so soon after discovering it
 
 (edit3: We've had some questions about the phrasing in the first public tweet. We standby our words. Not knowing how this would play out, we wanted to make it clear that we didn't support the app or the founder, but wanted to report the issue. Companies can be unpredictable when reporting vulnerabilities and we wanted to avoid a situation where they would be publicly praising us or even mentioning us on their website etc.)
 
+(edit4: An apology from Giggle has been made and no futher legal action will be taken)
+
 --- 
 
 ### What is Giggle?
